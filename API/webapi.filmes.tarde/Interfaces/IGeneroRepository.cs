@@ -21,7 +21,7 @@ namespace webapi.filmes.tarde.Interfaces
         /// <summary>
         /// Retornar todos os gêneros cadastrados.
         /// </summary>
-        /// <returns>Retorna uma lista de gêneros ( objetos )</returns>
+        /// <returns>Retorna uma lista de gêneros ( objetos ).</returns>
         List<GeneroDomain> ListarTodos();
 
         /// <summary>
