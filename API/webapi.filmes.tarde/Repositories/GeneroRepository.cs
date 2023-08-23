@@ -15,7 +15,7 @@ namespace webapi.filmes.tarde.Repositories
         /// - Windows: Integrate Security = True.
         /// - SQlServer: User Id = sa; Pwd = Senha.
         /// </summary>
-        private string StringConexao = "Data Source = NOTE18-S14; Initial Catalog = Filmes_Tarde; User Id=sa; Pwd=Senai@134";
+        private string StringConexao = "Data Source = NOTE18-S14; Initial Catalog = Filmes_Tarde; User Id = sa; Pwd = Senai@134";
         public void AtualizarIdCorpo(GeneroDomain genero)
         {
             throw new NotImplementedException();
@@ -31,7 +31,7 @@ namespace webapi.filmes.tarde.Repositories
             throw new NotImplementedException();
         }
 
-        public void Cadastrar(GeneroDomain NovoGenero)
+        public void Cadastrar(GeneroDomain novoGenero)
         {
             throw new NotImplementedException();
         }
@@ -54,7 +54,7 @@ namespace webapi.filmes.tarde.Repositories
             using (SqlConnection con = new SqlConnection(StringConexao))
             {
                 // Declara a instrução ( SELECT ) a ser executada.
-                string querySelect = "SELECT IdGenero, Nome FROM Genero";
+                string querySelectAll = "SELECT IdGenero, Nome FROM Genero";
 
                 // Abre a conexão com o banco de dados.
                 con.Open();
@@ -63,30 +63,30 @@ namespace webapi.filmes.tarde.Repositories
                 SqlDataReader rdr;
 
                 // Declara o SqlCommand passando a query que será executada e a conexão.
-                using (SqlCommand cmd = new SqlCommand(querySelect,con))
+                using (SqlCommand cmd = new SqlCommand(querySelectAll, con))
                 {
                     // Executa a query e armazena os dados do rdr.
                     rdr = cmd.ExecuteReader();
 
                     // Enquanto houver registros para serem lidos no rdr o laço se repetirá.
-                    while(rdr.Read())
+                    while (rdr.Read())
                     {
                         // Instancia  um objeto do tipo GeneroDomain.
-                        GeneroDomain genero = new GeneroDomain();
+                        GeneroDomain genero = new GeneroDomain()
                         {
                             // Atribui a propriedade IdGenero o valor da primeira coluna da tabela.
-                            IdGenero = Convert.ToInt32(rdr[0]);
+                            IdGenero = Convert.ToInt32(rdr[0]),
 
                             // Atribui a propriedade nome o valor da coluna Nome.
-                            Nome = rdr["Nome"].ToString();
+                            Nome = rdr["Nome"].ToString()
                         };
 
-                        // Adiciona o objeto criado dentro da lista.
+                        // Retornando a lista de gêneros.
                         listaGeneros.Add(genero);
-                    }
+                    };
                 }
+
             }
-            // Retornando a lista de gêneros.
             return listaGeneros;
         }
     }

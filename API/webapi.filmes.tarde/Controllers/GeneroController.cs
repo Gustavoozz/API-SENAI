@@ -1,5 +1,8 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using webapi.filmes.tarde.Domains;
+using webapi.filmes.tarde.Interfaces;
+using webapi.filmes.tarde.Repositories;
 
 namespace webapi.filmes.tarde.Controllers
 {
@@ -21,5 +24,43 @@ namespace webapi.filmes.tarde.Controllers
 
     public class GeneroController : ControllerBase
     {
+        /// <summary>
+        /// Objeto que irá receber os métodos definidos na interface.
+        /// </summary>
+        private IGeneroRepository _generoRepository { get; set; }
+
+        /// <summary>
+        /// Instância udo objeto -generoRepository para que haja referência aos métodos no repositório.
+        /// </summary>
+        public GeneroController()
+        {
+            _generoRepository = new GeneroRepository();
+        }
+
+        /// <summary>
+        /// EndPoint ( URL ) que acessa um método de listar os gêneros.
+        /// </summary>
+        /// <returns>Lista de gêneros e um status code.</returns>
+        [HttpGet]
+        public IActionResult Get() 
+        {
+            try
+            {
+              // Cria uma lista para receber os gêneros.
+              List<GeneroDomain> listaGeneros = _generoRepository.ListarTodos();
+
+              // Retorna o Status Code 200 - Ok e a lista de gêneros no formato JSON.
+              return Ok(listaGeneros);
+              // Ok = StatusCode(200).
+            }
+            catch (Exception erro)
+            {
+              // Retorna um Status Code 400 - BadRequest e a mensagem de erro. 
+              return BadRequest(erro.Message);
+            }
+        
+        }
+
+
     }
 }

@@ -15,8 +15,8 @@ namespace webapi.filmes.tarde.Interfaces
         /// <summary>
         /// Método responsável por cadastrar um novo gênero.
         /// </summary>
-        /// <param name="NovoGenero">Objeto que será cadastrado.</param>
-        void Cadastrar(GeneroDomain NovoGenero);
+        /// <param name="novoGenero">Objeto que será cadastrado.</param>
+        void Cadastrar(GeneroDomain novoGenero);
 
         /// <summary>
         /// Retornar todos os gêneros cadastrados.
