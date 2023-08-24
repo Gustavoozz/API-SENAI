@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Cryptography.X509Certificates;
 using webapi.filmes.tarde.Domains;
 using webapi.filmes.tarde.Interfaces;
 using webapi.filmes.tarde.Repositories;
@@ -58,7 +59,26 @@ namespace webapi.filmes.tarde.Controllers
               // Retorna um Status Code 400 - BadRequest e a mensagem de erro. 
               return BadRequest(erro.Message);
             }
-        
+           
+        }
+
+        [HttpPost]
+
+        public IActionResult Post(GeneroDomain novoGenero)
+        {
+            try
+            {
+                _generoRepository.Cadastrar(novoGenero);
+
+                // 201 - Created.
+                return Created("Objeto criado!", novoGenero);
+            }
+            catch (Exception erro)
+            {
+                // Retorna um Status Code 400 - BadRequest e a mensagem de erro.
+                return BadRequest(erro.Message);
+            }
+
         }
 
 

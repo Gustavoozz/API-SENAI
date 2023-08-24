@@ -26,14 +26,39 @@ namespace webapi.filmes.tarde.Repositories
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Buscar um gênero através do seu Id.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public GeneroDomain BuscarPorId(int id)
         {
             throw new NotImplementedException();
         }
 
+
+        /// <summary>
+        /// Cadastrar um novo gênero.
+        /// </summary>
         public void Cadastrar(GeneroDomain novoGenero)
         {
-            throw new NotImplementedException();
+            using (SqlConnection con = new SqlConnection(StringConexao))
+            {
+                // Declara a query que será executada.
+                string queryInsert = "INSERT INTO Genero(Nome) VALUES(' " + novoGenero.Nome + " ')";
+
+                // Declara o SqlCommand passando a query que será executada e a conexão com o BD.
+                using (SqlCommand cmd = new SqlCommand(queryInsert, con))
+                {
+
+                    // Abre a conexão com o banco de dados.
+                    con.Open();
+
+                    // Executa a query.
+                    cmd.ExecuteNonQuery();
+                }
+            }
+
         }
 
         public void Deletar(int id)
@@ -79,7 +104,7 @@ namespace webapi.filmes.tarde.Repositories
 
                             // Atribui a propriedade nome o valor da coluna Nome.
                             Nome = rdr["Nome"].ToString()
-                        };
+                        }; 
 
                         // Retornando a lista de gêneros.
                         listaGeneros.Add(genero);
@@ -89,5 +114,10 @@ namespace webapi.filmes.tarde.Repositories
             }
             return listaGeneros;
         }
+
+        
+
+
+
     }
 }
