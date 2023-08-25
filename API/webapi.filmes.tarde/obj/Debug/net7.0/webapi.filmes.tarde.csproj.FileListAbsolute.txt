@@ -57,3 +57,8 @@ C:\Users\53844614893\Desktop\API-SENAI\API\webapi.filmes.tarde\obj\Debug\net7.0\
 C:\Users\53844614893\Desktop\API-SENAI\API\webapi.filmes.tarde\obj\Debug\net7.0\webapi.filmes.tarde.pdb
 C:\Users\53844614893\Desktop\API-SENAI\API\webapi.filmes.tarde\obj\Debug\net7.0\webapi.filmes.tarde.genruntimeconfig.cache
 C:\Users\53844614893\Desktop\API-SENAI\API\webapi.filmes.tarde\obj\Debug\net7.0\ref\webapi.filmes.tarde.dll
+C:\Users\53844614893\Desktop\API-SENAI\API\webapi.filmes.tarde\obj\Debug\net7.0\webapi.filmes.tarde.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\53844614893\Desktop\API-SENAI\API\webapi.filmes.tarde\bin\Debug\net7.0\Microsoft.OpenApi.dll
+C:\Users\53844614893\Desktop\API-SENAI\API\webapi.filmes.tarde\bin\Debug\net7.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\53844614893\Desktop\API-SENAI\API\webapi.filmes.tarde\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\53844614893\Desktop\API-SENAI\API\webapi.filmes.tarde\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerUI.dll

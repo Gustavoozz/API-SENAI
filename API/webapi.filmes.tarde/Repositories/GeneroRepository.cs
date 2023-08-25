@@ -33,8 +33,47 @@ namespace webapi.filmes.tarde.Repositories
         /// <returns></returns>
         public GeneroDomain BuscarPorId(int id)
         {
-            throw new NotImplementedException();
+            
+            GeneroDomain generoBuscado = new();
+
+            
+            using (SqlConnection con = new(StringConexao))
+            {
+                
+                string queryFindById = "SELECT IdGenero, Nome FROM Genero";
+
+                
+                con.Open();
+
+                
+                SqlDataReader rdr;
+
+                
+                using SqlCommand cmd = new(queryFindById, con);
+                
+                rdr = cmd.ExecuteReader();
+
+                
+                while (rdr.Read())
+                {
+                    if (Convert.ToInt32(rdr[0]) == id)
+                    {
+                        generoBuscado = new()
+                        {
+                            
+                            IdGenero = Convert.ToInt32(rdr[0]),
+                            
+                            Nome = rdr[1].ToString(),
+                        };
+
+                    };
+                };
+            };
+
+            
+            return generoBuscado;
         }
+            
 
 
         /// <summary>
@@ -44,7 +83,7 @@ namespace webapi.filmes.tarde.Repositories
         {
             using (SqlConnection con = new SqlConnection(StringConexao))
             {
-                // Declara a query que será executada.
+                // Declara a query que   será executada.
                 string queryInsert = "INSERT INTO Genero(Nome) VALUES(' " + novoGenero.Nome + " ')";
 
                 // Declara o SqlCommand passando a query que será executada e a conexão com o BD.

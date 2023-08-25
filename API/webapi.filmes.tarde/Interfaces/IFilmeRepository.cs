@@ -4,7 +4,7 @@ namespace webapi.filmes.tarde.Interfaces
 {
     /// <summary>
     /// Interface responsável pelo repositório FilmeRepository.
-    /// Define os métodos que serão implementados pelo repositório.
+    /// Define os métodos ( métodos obrigatórios ) que serão implementados pelo repositório.
     /// </summary>
     public interface IFilmeRepository
     {

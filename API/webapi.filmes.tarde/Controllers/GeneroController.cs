@@ -62,6 +62,24 @@ namespace webapi.filmes.tarde.Controllers
            
         }
 
+        [HttpGet]
+        [Route("BuscarPorId")]
+        public IActionResult GetById()
+        {
+            try
+            {
+            
+                GeneroDomain generoBuscado = _generoRepository.BuscarPorId(6);
+                return Ok(generoBuscado);
+               
+            }
+            catch (Exception erro)
+            {
+                
+                return BadRequest(erro.Message);
+            }
+        }
+
         [HttpPost]
 
         public IActionResult Post(GeneroDomain novoGenero)
