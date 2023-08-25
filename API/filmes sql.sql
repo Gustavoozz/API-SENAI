@@ -20,5 +20,9 @@ VALUES('Ação'),('Terror')
 INSERT INTO Filme(IdGenero,Titulo)
 VALUES(1,'Django livre'),(2,'A Freira')
 
+-- Efeito Joana D'Arc: 
+--INSERT INTO Genero(Nome)
+--VALUES('Joana D'Arc')
+
 SELECT * FROM Genero
 SELECT * FROM Filme

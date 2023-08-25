@@ -39,21 +39,17 @@ namespace webapi.filmes.tarde.Repositories
             
             using (SqlConnection con = new(StringConexao))
             {
-                
+                // Declara a query que será executada.
                 string queryFindById = "SELECT IdGenero, Nome FROM Genero";
 
-                
                 con.Open();
-
                 
                 SqlDataReader rdr;
-
-                
+               
                 using SqlCommand cmd = new(queryFindById, con);
                 
                 rdr = cmd.ExecuteReader();
-
-                
+               
                 while (rdr.Read())
                 {
                     if (Convert.ToInt32(rdr[0]) == id)
@@ -69,8 +65,7 @@ namespace webapi.filmes.tarde.Repositories
                     };
                 };
             };
-
-            
+           
             return generoBuscado;
         }
             
@@ -83,12 +78,14 @@ namespace webapi.filmes.tarde.Repositories
         {
             using (SqlConnection con = new SqlConnection(StringConexao))
             {
-                // Declara a query que   será executada.
-                string queryInsert = "INSERT INTO Genero(Nome) VALUES(' " + novoGenero.Nome + " ')";
+                // Declara a query que será executada.
+                string queryInsert = "INSERT INTO Genero(Nome) VALUES(@Nome)";
 
                 // Declara o SqlCommand passando a query que será executada e a conexão com o BD.
                 using (SqlCommand cmd = new SqlCommand(queryInsert, con))
                 {
+
+                    cmd.Parameters.AddWithValue("@Nome", novoGenero.Nome);
 
                     // Abre a conexão com o banco de dados.
                     con.Open();
@@ -100,16 +97,35 @@ namespace webapi.filmes.tarde.Repositories
 
         }
 
-        public void Deletar(int id)
-        {
-            throw new NotImplementedException();
-        }
+            /// <summary>
+            /// Deleter um gênero.
+            /// </summary>
+            /// <param name="id"></param>
+            public void Deletar(int idGenero)
+            {
 
-        /// <summary>
-        /// Listar todos os objetos do tipo gênero.
-        /// </summary>
-        /// <returns>Lista de obejetos do tipo gênero.</returns>
-        public List<GeneroDomain> ListarTodos()
+            // Declara o SqlCommand passando a query que será executada e a conexão com o BD.
+            using (SqlConnection con = new SqlConnection(StringConexao))
+                {
+                // Declara a query que será executada.
+                string queryDelete = $"Delete FROM Genero WHERE IdGenero = {idGenero}";
+
+                using (SqlCommand cmd = new SqlCommand(queryDelete, con))
+                    {
+                    // Abre a conexão com o banco de dados.
+                    con.Open();
+
+                    // Executa a query.
+                    cmd.ExecuteNonQuery();
+                    }
+                }
+              }
+
+            /// <summary>
+            /// Listar todos os objetos do tipo gênero.
+            /// </summary>
+            /// <returns>Lista de obejetos do tipo gênero.</returns>
+            public List<GeneroDomain> ListarTodos()
         {
             // Cria uma lista de gêneros onde será armazenados os gêneros.
             List<GeneroDomain> listaGeneros = new List<GeneroDomain>();

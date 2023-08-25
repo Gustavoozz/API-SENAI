@@ -62,3 +62,5 @@ C:\Users\53844614893\Desktop\API-SENAI\API\webapi.filmes.tarde\bin\Debug\net7.0\
 C:\Users\53844614893\Desktop\API-SENAI\API\webapi.filmes.tarde\bin\Debug\net7.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\53844614893\Desktop\API-SENAI\API\webapi.filmes.tarde\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\53844614893\Desktop\API-SENAI\API\webapi.filmes.tarde\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\53844614893\Desktop\API-SENAI\API\webapi.filmes.tarde\bin\Debug\net7.0\webapi.filmes.tarde.xml
+C:\Users\53844614893\Desktop\API-SENAI\API\webapi.filmes.tarde\obj\Debug\net7.0\webapi.filmes.tarde.xml

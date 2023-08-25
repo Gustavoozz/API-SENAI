@@ -4,6 +4,7 @@ using System.Security.Cryptography.X509Certificates;
 using webapi.filmes.tarde.Domains;
 using webapi.filmes.tarde.Interfaces;
 using webapi.filmes.tarde.Repositories;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace webapi.filmes.tarde.Controllers
 {
@@ -62,26 +63,34 @@ namespace webapi.filmes.tarde.Controllers
            
         }
 
+        /// <summary>
+        /// EndPoint que acessa um método de buscar gêneros através do seu Id.
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         [Route("BuscarPorId")]
         public IActionResult GetById()
         {
             try
             {
-            
+                // 200 - Ok.
                 GeneroDomain generoBuscado = _generoRepository.BuscarPorId(6);
                 return Ok(generoBuscado);
                
             }
             catch (Exception erro)
-            {
-                
+            {       
+                // 400 - BadResquest.
                 return BadRequest(erro.Message);
             }
         }
 
+        /// <summary>
+        /// Endpoint que acessa um método de cadastrar um novo gênero.
+        /// </summary>
+        /// <param name="novoGenero"></param>
+        /// <returns></returns>
         [HttpPost]
-
         public IActionResult Post(GeneroDomain novoGenero)
         {
             try
@@ -99,6 +108,26 @@ namespace webapi.filmes.tarde.Controllers
 
         }
 
+        /// <summary>
+        /// Endpoint que acessa um método de deletar um novo gênero.
+        /// </summary>
+        /// <param name="idGenero"></param>
+        /// <returns></returns>
+        [HttpDelete("{idGenero}")]
+        public IActionResult Delete(int idGenero)
+        { 
+        try
+            {
+                // 200 - OK.
+                _generoRepository.Deletar(idGenero);
+                return Ok(idGenero);
+            }
+            catch (Exception erro)
+            {
+               // Retorna um Status Code 400 - BadRequest e a mensagem de erro.
+               return BadRequest(erro.Message);
+            }
+             }
 
     }
 }
