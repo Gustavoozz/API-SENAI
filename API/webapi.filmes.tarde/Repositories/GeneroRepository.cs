@@ -16,14 +16,49 @@ namespace webapi.filmes.tarde.Repositories
         /// - SQlServer: User Id = sa; Pwd = Senha.
         /// </summary>
         private string StringConexao = "Data Source = NOTE18-S14; Initial Catalog = Filmes_Tarde; User Id = sa; Pwd = Senai@134";
+
+        /// <summary>
+        /// Atualizar um gênero.
+        /// </summary>
+        /// <param name="genero"></param>
         public void AtualizarIdCorpo(GeneroDomain genero)
         {
-            throw new NotImplementedException();
+
+            using (SqlConnection con = new SqlConnection(StringConexao))
+            {
+                string queryUpdate = "UPDATE Genero SET Nome = @Nome WHERE IdGenero = @IdGenero";
+
+                using (SqlCommand cmd = new SqlCommand(queryUpdate,con))
+                {
+                    cmd.Parameters.AddWithValue("@Nome", genero.Nome);
+
+                    cmd.Parameters.AddWithValue("@IdGenero", genero.IdGenero);
+
+                    con.Open();
+
+                    cmd.ExecuteNonQuery();
+                }
+
+            }
         }
 
-        public void AtualizarIdUrl(int id, GeneroDomain genero)
+        public void AtualizarIdUrl(int idGenero, GeneroDomain genero)
         {
-            throw new NotImplementedException();
+
+            using (SqlConnection con = new SqlConnection(StringConexao))
+            {
+                string queryUpdate = $"UPDATE Genero SET Nome = @Nome WHERE IdGenero LIKE {idGenero}";
+
+                using (SqlCommand cmd = new SqlCommand(queryUpdate, con))
+                {
+                    cmd.Parameters.AddWithValue("@Nome", genero.Nome);
+
+                    con.Open();
+
+                    cmd.ExecuteNonQuery();
+                }
+
+            }
         }
 
         /// <summary>

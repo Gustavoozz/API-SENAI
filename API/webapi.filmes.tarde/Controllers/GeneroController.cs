@@ -44,23 +44,23 @@ namespace webapi.filmes.tarde.Controllers
         /// </summary>
         /// <returns>Lista de gêneros e um status code.</returns>
         [HttpGet]
-        public IActionResult Get() 
+        public IActionResult Get()
         {
             try
             {
-              // Cria uma lista para receber os gêneros.
-              List<GeneroDomain> listaGeneros = _generoRepository.ListarTodos();
+                // Cria uma lista para receber os gêneros.
+                List<GeneroDomain> listaGeneros = _generoRepository.ListarTodos();
 
-              // Retorna o Status Code 200 - Ok e a lista de gêneros no formato JSON.
-              return Ok(listaGeneros);
-              // Ok = StatusCode(200).
+                // Retorna o Status Code 200 - Ok e a lista de gêneros no formato JSON.
+                return Ok(listaGeneros);
+                // Ok = StatusCode(200).
             }
             catch (Exception erro)
             {
-              // Retorna um Status Code 400 - BadRequest e a mensagem de erro. 
-              return BadRequest(erro.Message);
+                // Retorna um Status Code 400 - BadRequest e a mensagem de erro. 
+                return BadRequest(erro.Message);
             }
-           
+
         }
 
         /// <summary>
@@ -76,10 +76,10 @@ namespace webapi.filmes.tarde.Controllers
                 // 200 - Ok.
                 GeneroDomain generoBuscado = _generoRepository.BuscarPorId(6);
                 return Ok(generoBuscado);
-               
+
             }
             catch (Exception erro)
-            {       
+            {
                 // 400 - BadResquest.
                 return BadRequest(erro.Message);
             }
@@ -115,8 +115,8 @@ namespace webapi.filmes.tarde.Controllers
         /// <returns></returns>
         [HttpDelete("{idGenero}")]
         public IActionResult Delete(int idGenero)
-        { 
-        try
+        {
+            try
             {
                 // 200 - OK.
                 _generoRepository.Deletar(idGenero);
@@ -124,10 +124,51 @@ namespace webapi.filmes.tarde.Controllers
             }
             catch (Exception erro)
             {
-               // Retorna um Status Code 400 - BadRequest e a mensagem de erro.
-               return BadRequest(erro.Message);
+                // Retorna um Status Code 400 - BadRequest e a mensagem de erro.
+                return BadRequest(erro.Message);
             }
-             }
+        }
+
+
+        /// <summary>
+        /// Endpoint que acessa um método de atualizar um novo gênero através do corpo.
+        /// </summary>
+        /// <param name="genero"></param>
+        /// <returns></returns>
+        [HttpPut]
+        public IActionResult Put(GeneroDomain genero)
+        {
+            try
+            {
+                _generoRepository.AtualizarIdCorpo(genero);
+                return Ok(genero);
+            }
+            catch (Exception erro)
+            {
+
+                // Retorna um Status Code 400 - BadRequest e a mensagem de erro.
+                return BadRequest(erro.Message);
+            }
+        }
+
+        [HttpPut("{idGenero}")]
+        public IActionResult Put(int idGenero, GeneroDomain novoGenero)
+        {
+            try
+            {
+                 _generoRepository.AtualizarIdUrl(idGenero, novoGenero);
+                return Ok(novoGenero);
+            }
+            catch (Exception erro)
+            {
+
+                // Retorna um Status Code 400 - BadRequest e a mensagem de erro.
+                return BadRequest(erro.Message);
+            }
+        }
+
+
+
 
     }
 }
