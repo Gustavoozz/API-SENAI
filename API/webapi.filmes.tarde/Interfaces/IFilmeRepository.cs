@@ -8,6 +8,7 @@ namespace webapi.filmes.tarde.Interfaces
     /// </summary>
     public interface IFilmeRepository
     {
+
         /// <summary>
         /// Método responsável por cadastrar um novo filme.
         /// </summary>

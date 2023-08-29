@@ -4,6 +4,28 @@
         <name>webapi.filmes.tarde</name>
     </assembly>
     <members>
+        <member name="T:webapi.filmes.tarde.Controllers.FilmeController">
+            <summary>
+            Define que a rota de uma requisição será do seguinte formato: dominio/api/nomeController.
+            Exemplo: http://localhost:5000/api/Genero.
+            </summary>
+        </member>
+        <member name="P:webapi.filmes.tarde.Controllers.FilmeController._filmeRepository">
+            <summary>
+            Objeto que irá receber os métodos definidos na interface.
+            </summary>
+        </member>
+        <member name="M:webapi.filmes.tarde.Controllers.FilmeController.#ctor">
+            <summary>
+            Instância udo objeto -generoRepository para que haja referência aos métodos no repositório.
+            </summary>
+        </member>
+        <member name="M:webapi.filmes.tarde.Controllers.FilmeController.Get">
+            <summary>
+            EndPoint ( URL ) que acessa um método de listar os gêneros.
+            </summary>
+            <returns>Lista de gêneros e um status code.</returns>
+        </member>
         <member name="T:webapi.filmes.tarde.Controllers.GeneroController">
             <summary>
             Define que a rota de uma requisição será do seguinte formato: dominio/api/nomeController.
@@ -134,6 +156,28 @@
             Método responsável por deletar um gênero existente.
             </summary>
             <param name="id">Id do objeto a ser deletado.</param>
+        </member>
+        <member name="F:webapi.filmes.tarde.Repositories.FilmeRepository.StringConexao">
+            <summary>
+            String de conexão com o Banco de Dados que recebe os seguintes parâmetros:
+            Data Source: Nome do servidor do banco.
+            Initial Catalog: Nome do banco de dados.
+            Autenticação.
+            - Windows: Integrate Security = True.
+            - SQlServer: User Id = sa; Pwd = Senha.
+            </summary>
+        </member>
+        <member name="M:webapi.filmes.tarde.Repositories.FilmeRepository.AtualizarIdCorpo(webapi.filmes.tarde.Domains.FilmeDomain)">
+            <summary>
+            Atualizar um gênero.
+            </summary>
+            <param name="genero"></param>
+        </member>
+        <member name="M:webapi.filmes.tarde.Repositories.FilmeRepository.ListarTodos">
+            <summary>
+            Retornar todos os gêneros cadastrados
+            </summary>
+            <returns>Uma lista de objetos</returns>
         </member>
         <member name="F:webapi.filmes.tarde.Repositories.GeneroRepository.StringConexao">
             <summary>
