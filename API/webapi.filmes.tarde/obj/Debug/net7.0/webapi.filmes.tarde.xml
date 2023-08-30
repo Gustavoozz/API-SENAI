@@ -22,9 +22,44 @@
         </member>
         <member name="M:webapi.filmes.tarde.Controllers.FilmeController.Get">
             <summary>
-            EndPoint ( URL ) que acessa um método de listar os gêneros.
+            EndPoint ( URL ) que acessa um método de listar os filmes.
             </summary>
             <returns>Lista de gêneros e um status code.</returns>
+        </member>
+        <member name="M:webapi.filmes.tarde.Controllers.FilmeController.Put(webapi.filmes.tarde.Domains.FilmeDomain)">
+            <summary>
+            EndPoint que acessa um método de atualizar um novo filme através da corpo.
+            </summary>
+            <param name="filme"></param>
+            <returns></returns>
+        </member>
+        <member name="M:webapi.filmes.tarde.Controllers.FilmeController.Put(System.Int32,webapi.filmes.tarde.Domains.FilmeDomain)">
+            <summary>
+            EndPoint que acessa um método de atualizar um novo filme através da URL.
+            </summary>
+            <param name="idFilme"></param>
+            <param name="novoFilme"></param>
+            <returns></returns>
+        </member>
+        <member name="M:webapi.filmes.tarde.Controllers.FilmeController.GetById(System.Int32)">
+            <summary>
+            EndPoint que acessa um método de buscar filmes através do seu Id.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:webapi.filmes.tarde.Controllers.FilmeController.Post(webapi.filmes.tarde.Domains.FilmeDomain)">
+            <summary>
+            EndPoint que acessa um método de cadastrar um novo filme.
+            </summary>
+            <param name="novoFilme"></param>
+            <returns></returns>
+        </member>
+        <member name="M:webapi.filmes.tarde.Controllers.FilmeController.Delete(System.Int32)">
+            <summary>
+            EndPoint que acessa um método de deletar um filme.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
         </member>
         <member name="T:webapi.filmes.tarde.Controllers.GeneroController">
             <summary>
@@ -74,6 +109,24 @@
             </summary>
             <param name="genero"></param>
             <returns></returns>
+        </member>
+        <member name="M:webapi.filmes.tarde.Controllers.GeneroController.Put(System.Int32,webapi.filmes.tarde.Domains.GeneroDomain)">
+            <summary>
+            Endpoint que acessa um método de atualizar um novo gênero através da URL.
+            </summary>
+            <param name="idGenero"></param>
+            <param name="novoGenero"></param>
+            <returns></returns>
+        </member>
+        <member name="P:webapi.filmes.tarde.Controllers.UsuarioController._usuarioRepository">
+            <summary>
+            Objeto que irá receber os métodos definidos na interface.
+            </summary>
+        </member>
+        <member name="M:webapi.filmes.tarde.Controllers.UsuarioController.#ctor">
+            <summary>
+            Instância udo objeto -generoRepository para que haja referência aos métodos no repositório.
+            </summary>
         </member>
         <member name="T:webapi.filmes.tarde.Domains.GeneroDomain">
             <summary>
@@ -156,6 +209,11 @@
             Método responsável por deletar um gênero existente.
             </summary>
             <param name="id">Id do objeto a ser deletado.</param>
+        </member>
+        <member name="T:webapi.filmes.tarde.Interfaces.IUsuarioRepository">
+            <summary>
+            
+            </summary>
         </member>
         <member name="F:webapi.filmes.tarde.Repositories.FilmeRepository.StringConexao">
             <summary>

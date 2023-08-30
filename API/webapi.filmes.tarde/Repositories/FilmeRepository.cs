@@ -42,7 +42,7 @@ namespace webapi.filmes.tarde.Repositories
         {
             using (SqlConnection con = new SqlConnection(StringConexao))
             {
-                string queryUpdate = $"UPDATE Genero SET Nome = @Nome WHERE IdGenero LIKE {id}";
+                string queryUpdate = $"UPDATE Genero SET Nome = @Titulo WHERE IdGenero LIKE {id}";
 
                 using (SqlCommand cmd = new SqlCommand(queryUpdate, con))
                 {

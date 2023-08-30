@@ -62,6 +62,11 @@ namespace webapi.filmes.tarde.Controllers
         }
 
 
+        /// <summary>
+        /// EndPoint que acessa um método de atualizar um novo filme através da corpo.
+        /// </summary>
+        /// <param name="filme"></param>
+        /// <returns></returns>
         [HttpPut]
         public IActionResult Put(FilmeDomain filme)
         {
@@ -78,6 +83,12 @@ namespace webapi.filmes.tarde.Controllers
             }
         }
 
+        /// <summary>
+        /// EndPoint que acessa um método de atualizar um novo filme através da URL.
+        /// </summary>
+        /// <param name="idFilme"></param>
+        /// <param name="novoFilme"></param>
+        /// <returns></returns>
         [HttpPut("{idFilme}")]
         public IActionResult Put(int idFilme, FilmeDomain novoFilme)
         {
@@ -115,6 +126,11 @@ namespace webapi.filmes.tarde.Controllers
             }
         }
 
+        /// <summary>
+        /// EndPoint que acessa um método de cadastrar um novo filme.
+        /// </summary>
+        /// <param name="novoFilme"></param>
+        /// <returns></returns>
         [HttpPost]
         public IActionResult Post(FilmeDomain novoFilme)
         {
@@ -133,7 +149,11 @@ namespace webapi.filmes.tarde.Controllers
 
         }
 
-
+        /// <summary>
+        /// EndPoint que acessa um método de deletar um filme.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {

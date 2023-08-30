@@ -151,6 +151,12 @@ namespace webapi.filmes.tarde.Controllers
             }
         }
 
+        /// <summary>
+        /// Endpoint que acessa um método de atualizar um novo gênero através da URL.
+        /// </summary>
+        /// <param name="idGenero"></param>
+        /// <param name="novoGenero"></param>
+        /// <returns></returns>
         [HttpPut("{idGenero}")]
         public IActionResult Put(int idGenero, GeneroDomain novoGenero)
         {
