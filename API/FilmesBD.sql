@@ -61,9 +61,9 @@ CREATE TABLE Usuario
 	IdUsuario INT PRIMARY KEY IDENTITY,
 	Email VARCHAR(50) NOT NULL UNIQUE,
 	Senha VARCHAR(20) NOT NULL,
-	Permissão BIT NOT NULL
+	Permissao BIT NOT NULL
 )
 
 -- Inserir dados na tabela usuario:
-INSERT INTO Usuario(Email,Senha,Permissão)
-VALUES('maNOEL@gmail.com','4321','0')
+INSERT INTO Usuario(Email,Senha,Permissao)
+VALUES('manoel@gmail.com','4321','0')

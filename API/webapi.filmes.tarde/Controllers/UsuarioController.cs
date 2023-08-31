@@ -39,6 +39,7 @@ namespace webapi.filmes.tarde.Controllers
 
                 return Created("Objeto criado!", usuarioBuscado);
             }
+
             catch (Exception erro)
             {
 
