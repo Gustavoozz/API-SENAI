@@ -8,7 +8,7 @@ namespace webapi.filmes.tarde.Repositories
     {
         private string StringConexao = "Data Source = NOTE18-S14; Initial Catalog = Filmes_Tarde; User Id = sa; Pwd = Senai@134";
         public UsuarioDomain Logar(string Email, string Senha)
-        {
+        {   
             using (SqlConnection con = new SqlConnection(StringConexao))
             {
                 string queryUsuario = "SELECT IdUsuario, Email, Senha, Permissao FROM Usuario WHERE Email = @Email AND Senha = @Senha";
@@ -29,13 +29,13 @@ namespace webapi.filmes.tarde.Repositories
                     {
                         UsuarioDomain usuarioBuscado = new UsuarioDomain()
                         {
-                            IdUsuario = Convert.ToInt32(rdr[0]),
+                            IdUsuario = Convert.ToInt32(rdr["IdUsuario"]),
 
                             Email = rdr["Email"].ToString(),
 
                             Senha = rdr["Senha"].ToString(),
 
-                            Permissao = Convert.ToBoolean(rdr[0])
+                            Permissao = Convert.ToBoolean(rdr["Permissao"])
                         };
                         return usuarioBuscado;
                     }

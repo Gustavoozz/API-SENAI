@@ -31,18 +31,17 @@ namespace webapi.filmes.tarde.Controllers
             try
             {
                 UsuarioDomain usuarioBuscado = _usuarioRepository.Logar(Email, Senha);
+
                 if (usuarioBuscado ==  null)
                 {
                     return NotFound("Usuário não encontrado!");
                 }
                 
-
-                return Created("Objeto criado!", usuarioBuscado);
+                return Ok(usuarioBuscado);
             }
 
             catch (Exception erro)
-            {
-
+            {          
                 return BadRequest(erro.Message);
             }
         }
