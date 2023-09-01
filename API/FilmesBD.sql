@@ -49,7 +49,7 @@ FROM Filme AS F
 -- Select:
 SELECT * FROM Genero
 SELECT * FROM Filme
-SELECT * FROM Usuario
+SELECT * FROM Usuario	
 
 -- DROP:
 DROP TABLE Usuario
@@ -66,4 +66,4 @@ CREATE TABLE Usuario
 
 -- Inserir dados na tabela usuario:
 INSERT INTO Usuario(Email,Senha,Permissao)
-VALUES('manoel@gmail.com','4321','0')
+VALUES('gomes@gmail.com','1234','1')

@@ -128,6 +128,13 @@
             Instância udo objeto -generoRepository para que haja referência aos métodos no repositório.
             </summary>
         </member>
+        <member name="M:webapi.filmes.tarde.Controllers.UsuarioController.Post(webapi.filmes.tarde.Domains.UsuarioDomain)">
+            <summary>
+            Método de Login.
+            </summary>
+            <param name="usuario"></param>
+            <returns></returns>
+        </member>
         <member name="T:webapi.filmes.tarde.Domains.GeneroDomain">
             <summary>
             Classe que representa a entidade ( tabela ) 'Genero'.
