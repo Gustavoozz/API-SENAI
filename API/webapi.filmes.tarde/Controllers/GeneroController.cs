@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Cryptography.X509Certificates;
 using webapi.filmes.tarde.Domains;
@@ -44,6 +45,7 @@ namespace webapi.filmes.tarde.Controllers
         /// </summary>
         /// <returns>Lista de gêneros e um status code.</returns>
         [HttpGet]
+        [Authorize]
         public IActionResult Get()
         {
             try

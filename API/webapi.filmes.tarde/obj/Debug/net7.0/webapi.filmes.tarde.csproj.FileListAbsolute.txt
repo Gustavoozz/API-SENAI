@@ -104,3 +104,11 @@ C:\Users\53844614893\Desktop\⠀⠀⠀⠀⠀⠀⠀⠀⠀\API-SENAI\API\webapi.fi
 C:\Users\53844614893\Desktop\⠀⠀⠀⠀⠀⠀⠀⠀⠀\API-SENAI\API\webapi.filmes.tarde\obj\Debug\net7.0\webapi.filmes.tarde.pdb
 C:\Users\53844614893\Desktop\⠀⠀⠀⠀⠀⠀⠀⠀⠀\API-SENAI\API\webapi.filmes.tarde\obj\Debug\net7.0\webapi.filmes.tarde.genruntimeconfig.cache
 C:\Users\53844614893\Desktop\⠀⠀⠀⠀⠀⠀⠀⠀⠀\API-SENAI\API\webapi.filmes.tarde\obj\Debug\net7.0\ref\webapi.filmes.tarde.dll
+C:\Users\53844614893\Desktop\⠀⠀⠀⠀⠀⠀⠀⠀⠀\API-SENAI\API\webapi.filmes.tarde\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\53844614893\Desktop\⠀⠀⠀⠀⠀⠀⠀⠀⠀\API-SENAI\API\webapi.filmes.tarde\bin\Debug\net7.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\53844614893\Desktop\⠀⠀⠀⠀⠀⠀⠀⠀⠀\API-SENAI\API\webapi.filmes.tarde\bin\Debug\net7.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\53844614893\Desktop\⠀⠀⠀⠀⠀⠀⠀⠀⠀\API-SENAI\API\webapi.filmes.tarde\bin\Debug\net7.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\53844614893\Desktop\⠀⠀⠀⠀⠀⠀⠀⠀⠀\API-SENAI\API\webapi.filmes.tarde\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\53844614893\Desktop\⠀⠀⠀⠀⠀⠀⠀⠀⠀\API-SENAI\API\webapi.filmes.tarde\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\53844614893\Desktop\⠀⠀⠀⠀⠀⠀⠀⠀⠀\API-SENAI\API\webapi.filmes.tarde\bin\Debug\net7.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\53844614893\Desktop\⠀⠀⠀⠀⠀⠀⠀⠀⠀\API-SENAI\API\webapi.filmes.tarde\bin\Debug\net7.0\System.IdentityModel.Tokens.Jwt.dll

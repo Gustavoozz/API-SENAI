@@ -86,7 +86,11 @@ namespace webapi.filmes.tarde.Controllers
 
                 );
 
-                return Ok(usuarioBuscado);
+                // 5 - Retornar o token criado:
+                return Ok(new
+                {
+                    token = new JwtSecurityTokenHandler().WriteToken(token),
+                });
             }
 
             catch (Exception erro)
